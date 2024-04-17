@@ -22,17 +22,21 @@ La metastasis, la dispersión de células cansesoras de una parte del cuerpo a o
 
 El Go es un juego de mesa por turnos, de estrategia, originario de China, datando de hace más de 4000 años. Basicamente, en un tablero de 19 x 19 (Figura 1), cada jugador (siendo blanco o negro), coloca una pieza por turno, en las intersecciones de las líneas, tratando de ocupar todas las libertades del contrincante (Figura 2) para “capturar” y quitar poder al mismo.
 
-![Tablero típico del juego Go de 19 x 19.](https://github.com/camichaubell/InmuneGo-IsingModel/images/Fig1-TableroTipico.png?raw=true)
-Figura 1. Tablero típico del juego Go de 19 x 19.
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main//images/Fig1-TableroTipico.png?raw=true" height="300" width="400" alt="Tablero típico del juego Go de 19 x 19"/>  
+</p>
+<p align="center">Figura 1. Tablero típico del juego Go de 19 x 19. </p>
 
-![Libertades de una pieza, siendo las libertades de una pieza negra los números 1, 2, 3 y 4.](https://github.com/camichaubell/InmuneGo-IsingModel/images/Fig2-Libertades.png?raw=true)
-Figura 2. Libertades de una pieza, siendo las libertades de una pieza negra los números 1, 2, 3 y 4.
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Fig2-Libertades.png?raw=true" alt="Libertades de una pieza, siendo las libertades de una pieza negra los números 1, 2, 3 y 4."/>  
+</p>
+<p align="center">Figura 2. Libertades de una pieza, siendo las libertades de una pieza negra los números 1, 2, 3 y 4. </p>
 
 ### ¿Por qué la metáfora?
 
 Dadas las diferentes tácticas que se pueden emplear y la cantidad enorme de variantes que se obtiene de una partida de Go, se puede considerar semejante y modelizar la competencia que existe entre el sistema inmune y el cáncer, donde ambos intentan rodear las células o moléculas enemigas, para destruirlas. Esto puede verse en la figura 3, donde se muestra cómo se pasa de un tablero de Go, a un grafo del modelo de Ising y finalmente a la competencia real que existen entre el cáncer y el sistema inmune.
 
-![Análisis del juego Go como competencia entre el sistema inmune y el cáncer.](https://github.com/camichaubell/InmuneGo-IsingModel/images/Fig3-Analisis.png?raw=true)
+![Análisis del juego Go como competencia entre el sistema inmune y el cáncer.](https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/blob/main/images/Fig3-Analisis.png?raw=true)
 Figura 3. Análisis del juego Go como competencia entre el sistema inmune y el cáncer.
 
 
@@ -41,14 +45,16 @@ Figura 3. Análisis del juego Go como competencia entre el sistema inmune y el c
 
 Como modelo matemático, los papers consultados utilizan las siguientes ecuaciones:
 
-***
-$\mathbf{\text{Ecuaciones consideradas}}$<br>
-***
-$$H = - \frac{1}{2} \sum \limits _{i,j} ^{n} w_{i,j} x_i x_j - \sum \limits _{i} ^{n} h_{i} |x_{i}| $$
 
-$$x_i = c_i (n_i + r_{0} ^{k_i}) $$
+***
+#### Ecuaciones consideradas
+***
+<p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}H=-\frac{1}{2}\sum\limits&space;_{i,j}^{n}w_{i,j}x_i&space;x_j-\sum\limits&space;_{i}^{n}h_{i}|x_{i}|" title="H=-\frac{1}{2}\sum\limits _{i,j}^{n}w_{i,j}x_i x_j-\sum\limits _{i}^{n}h_{i}|x_{i}|" /></p>
 
-$$w_{i, j} = \sum \limits _{k} ^{m} r_{t} x_{t} ^{ij} $$
+
+<p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}x_i=c_i(n_i&plus;r_{0}^{k_i})" title="x_i=c_i(n_i+r_{0}^{k_i})" /></p>
+
+<p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}w_{i,j}=\sum\limits&space;_{k}^{m}r_{t}x_{t}^{ij}" title="w_{i,j}=\sum\limits _{k}^{m}r_{t}x_{t}^{ij}" /></p>
 
 
 $H$ : Hamiltoniano de Ising para ferromagnetismo en el cual se incluyen parámetros bioquimicos y biofísicos.<br>
@@ -62,13 +68,14 @@ $H$ : Hamiltoniano de Ising para ferromagnetismo en el cual se incluyen parámet
 ***
 
 Dada la complejidad que presentaba el problema, y el poco tiempo disponible para realizar el trabajo, se optó por no tomar las posiciones de las células en la molécula como tácticas y sólo contar la cantidad de células por moléculas, mediante el siguiente modelo:
-$\mathbf{\text{Formato final de las Ecuaciones utilizadas}}$<br>
+
+#### Formato final de las Ecuaciones utilizadas
 ***
-$$H = - \frac{1}{2} \sum \limits _{i,j} ^{n} w_{i,j} x_i x_j $$
+<p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}H=-\frac{1}{2}\sum\limits&space;_{i,j}^{n}w_{i,j}x_i&space;x_j" title="H=-\frac{1}{2}\sum\limits _{i,j}^{n}w_{i,j}x_i x_j" /></p>
 
-$$x_i = c_i $$
+<p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}x_i=c_i" title="x_i=c_i" /></p>
 
-$$w_{i, j} = \sum \limits _{k} ^{m} r_{t} x_{s} ^{ij} $$
+<p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}w_{i,j}=\sum\limits&space;_{k}^{m}r_{t}x_{s}^{ij}" title="w_{i,j}=\sum\limits _{k}^{m}r_{t}x_{s}^{ij}" /></p>
 ***
 
 
@@ -250,31 +257,49 @@ Para comprobar el funcionamiento de la modelización, se realizaron los siguient
     * Fuerza del Sistema Inmune "Medium"
 
 En el gráfico 1, se puede ver cómo en el caso A, las energías acumuladas para ambos sistemas es equivalente a lo largo de los diferentes turnos, llegando a un valor cercano a 6 de Energía de Ising.
-
-![Caso A - Variación de la energía de Sistemas Canceroso e Inmune](https://github.com/camichaubell/InmuneGo-IsingModel/images/Gra1-CasoA.png?raw=true)
-Gráfico 1. Caso A - Variación de la energía de Sistemas Canceroso e Inmune
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Gra1-CasoA.png?raw=true" height="300" width="400" alt="Caso A - Variación de la energía de Sistemas Canceroso e Inmune"/>  
+</p>
+<p align="center">Gráfico 1. Caso A - Variación de la energía de Sistemas Canceroso e Inmune</p>
 
 Luego, realizando la comparación entre los casos B y C, se puede ver en el gráfico 2 y 3, respectivamente, que las configuraciones que poseen mayor fuerza adquieren al final de la simulación mayor energía. Debe tenerse en cuenta que no poseen igual cantidad de turnos o pasos, debido a las condiciones de corte que posee el programa (Cuando no se coloca una pieza se considera un pase, y si ocurren dos pases seguidos se termina el juego).
 
-![Caso B - Variación de la energía de Sistemas Canceroso e Inmune](https://github.com/camichaubell/InmuneGo-IsingModel/images/Gra2-CasoB.png?raw=true)
-Gráfico 2. Caso B - Variación de la energía de Sistemas Canceroso e Inmune
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Gra2-CasoB.png?raw=true" height="300" width="400" alt="Caso B - Variación de la energía de Sistemas Canceroso e Inmune"/>  
+</p>
+<p align="center">Gráfico 2. Caso B - Variación de la energía de Sistemas Canceroso e Inmune</p>
 
-![Caso C - Variación de la energía de Sistemas Canceroso e Inmune](https://github.com/camichaubell/InmuneGo-IsingModel/images/Gra3-CasoC.png?raw=true)
-Gráfico 3. Caso C - Variación de la energía de Sistemas Canceroso e Inmune
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Gra3-CasoC.png?raw=true" height="300" width="400" alt="Caso C - Variación de la energía de Sistemas Canceroso e Inmune"/>  
+</p>
+<p align="center">Gráfico 3. Caso C - Variación de la energía de Sistemas Canceroso e Inmune</p>
+
 
 Para los casos D y E, se colocó un cúmulo de células en el mismo lugar para ambos casos y se muestra cómo quedó el tablero antes y después de la corrida de simulación en las figuras 4 y 5, respectivamente. Por otro lado, se observa en los gráficos 4 y 5, que posee mayor energía aquel sistema que inició con un cúmulo de células de su tipo. Además, se debe tener en cuenta que durante el programa, no se tuvo en cuenta la energía inicial, dado que sólo se había considerado tablero inicial vacío, esto generó que al momento de evaluar los casos D y E, falte la energía inicial debida a la existencia inicial del cúmulo.
 
-![Tablero caso D. Izquierda: Tablero con cúmulo inicial. Derecha: Tablero final luego de la corrida.](https://github.com/camichaubell/InmuneGo-IsingModel/images/Fig4-TableroCasoD.png?raw=true)
-Figura 4. Tablero caso D. Izquierda: Tablero con cúmulo inicial. Derecha: Tablero final luego de la corrida.
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Fig4-TableroCasoD.png?raw=true"  alt="Tablero caso D. Izquierda: Tablero con cúmulo inicial. Derecha: Tablero final luego de la corrida."/>  
+</p>
+<p align="center">Figura 4. Tablero caso D. Izquierda: Tablero con cúmulo inicial. Derecha: Tablero final luego de la corrida.</p>
 
-![Figura 5. Tablero caso E. Izquierda: Tablero con cúmulo inicial.Derecha: Tablero final luego de la corrida.](https://github.com/camichaubell/InmuneGo-IsingModel/images/Fig5-TableroCasoE.png?raw=true)
-Figura 5. Tablero caso E. Izquierda: Tablero con cúmulo inicial.Derecha: Tablero final luego de la corrida.
 
-![Gráfico 4. Caso D - Variación de la energía de Sistemas Canceroso e Inmune](https://github.com/camichaubell/InmuneGo-IsingModel/images/Gra4-TablerCasoD.png?raw=true)
-Gráfico 4. Caso D - Variación de la energía de Sistemas Canceroso e Inmune
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Fig5-TableroCasoE.png?raw=true"  alt="Figura 5. Tablero caso E. Izquierda: Tablero con cúmulo inicial.Derecha: Tablero final luego de la corrida."/>  
+</p>
+<p align="center">Figura 5. Tablero caso E. Izquierda: Tablero con cúmulo inicial.Derecha: Tablero final luego de la corrida.</p>
 
-![Gráfico 5. Caso E - Variación de la energía de Sistemas Canceroso e Inmune](https://github.com/camichaubell/InmuneGo-IsingModel/images/Gra5-TableroCasoE.png?raw=true)
-Gráfico 5. Caso E - Variación de la energía de Sistemas Canceroso e Inmune
+
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Gra4-TablerCasoD.png?raw=true"  alt="Gráfico 4. Caso D - Variación de la energía de Sistemas Canceroso e Inmune"/>  
+</p>
+<p align="center">Gráfico 4. Caso D - Variación de la energía de Sistemas Canceroso e Inmune</p>
+
+
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Gra5-TableroCasoE.png?raw=true"  alt="Gráfico 5. Caso E - Variación de la energía de Sistemas Canceroso e Inmune"/>  
+</p>
+<p align="center">Gráfico 5. Caso E - Variación de la energía de Sistemas Canceroso e Inmune</p>
+
 
 ### Conclusiones
 
