@@ -36,9 +36,10 @@ El Go es un juego de mesa por turnos, de estrategia, originario de China, datand
 
 Dadas las diferentes tácticas que se pueden emplear y la cantidad enorme de variantes que se obtiene de una partida de Go, se puede considerar semejante y modelizar la competencia que existe entre el sistema inmune y el cáncer, donde ambos intentan rodear las células o moléculas enemigas, para destruirlas. Esto puede verse en la figura 3, donde se muestra cómo se pasa de un tablero de Go, a un grafo del modelo de Ising y finalmente a la competencia real que existen entre el cáncer y el sistema inmune.
 
-![Análisis del juego Go como competencia entre el sistema inmune y el cáncer.](https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/blob/main/images/Fig3-Analisis.png?raw=true)
-Figura 3. Análisis del juego Go como competencia entre el sistema inmune y el cáncer.
-
+<p align="center">
+    <img src="https://github.com/camichaubell/InmuneGo-IsingModel/blob/main/images/Fig3-Analisis.png?raw=true" alt="Análisis del juego Go como competencia entre el sistema inmune y el cáncer."/>  
+</p>
+<p align="center">Figura 3. Análisis del juego Go como competencia entre el sistema inmune y el cáncer. </p>
 
 
 ### Modelo matemático
@@ -76,6 +77,7 @@ Dada la complejidad que presentaba el problema, y el poco tiempo disponible para
 <p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}x_i=c_i" title="x_i=c_i" /></p>
 
 <p style="text-align:center;"><img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}w_{i,j}=\sum\limits&space;_{k}^{m}r_{t}x_{s}^{ij}" title="w_{i,j}=\sum\limits _{k}^{m}r_{t}x_{s}^{ij}" /></p>
+
 ***
 
 
